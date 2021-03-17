@@ -12,4 +12,4 @@ docker exec -it db_seguradora psql -U postgres -h localhost -W
 ~~~
 **POPULANDO BANCO DE DADOS**
 
-acessar arqui database.sql no diretório resources
+acessar arquivo database.sql no diretório resources
