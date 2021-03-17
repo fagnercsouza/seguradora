@@ -9,9 +9,10 @@ import { ApoliceService } from '../apolice/apolice.service';
 })
 export class HomeComponent implements OnInit {
   @Input()
-   value: number = 0
-   apolice: Apolice
-
+  value: number = 0
+  apolice: Apolice
+  qntDias: number
+  statu: boolean = false
   constructor(private apoliceService: ApoliceService) { }
 
   ngOnInit(): void {
@@ -27,17 +28,15 @@ export class HomeComponent implements OnInit {
   }
       
   dateDiferencaEmDias() {
-    let final = new Date('2021-01-20')
-    let atual = new Date()
-    
-    final = new Date(final)
-    atual = new Date(atual)
-    // let seila = atual - final
-    // let time = Math.abs(atual - final)
-    // let tempoEmDias = 1000 * 60 * 60 * 24
-    // let dias = time / tempoEmDias
-    
-    // console.log(dias);
+    let final = new Date(this.apolice.fimContrato).getTime()
+    let atual = new Date().getTime()
+
+    let seila = atual - final
+    let tempoEmDias = 1000 * 60 * 60 * 24
+    let dias = seila / tempoEmDias
+    this.qntDias = dias
+    console.log(dias);
+    console.log(seila);
 
     
  }
