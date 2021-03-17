@@ -10,3 +10,6 @@ docker run --name db_seguradora -d -p 5432:5432 -e POSTGRES_PASSWORD=root -e POS
 ~~~
 docker exec -it db_seguradora psql -U postgres -h localhost -W
 ~~~
+**POPULANDO BANCO DE DADOS**
+
+acessar arqui database.sql no diretório resources
