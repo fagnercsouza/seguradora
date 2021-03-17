@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   apolice: Apolice
   qntDias: number
   statu: boolean = false
+  vencindo: boolean
   constructor(private apoliceService: ApoliceService) { }
 
   ngOnInit(): void {
@@ -23,21 +24,25 @@ export class HomeComponent implements OnInit {
       return
     }
     this.apoliceService.buscarApolice(this.value)
-        .subscribe(res => this.apolice = res)
-    this.dateDiferencaEmDias()
+        .subscribe(res => {
+          this.apolice = res
+          this.dateDiferencaEmDias(new Date(res.fimContrato))
+        })
   }
       
-  dateDiferencaEmDias() {
-    let final = new Date(this.apolice.fimContrato).getTime()
+  dateDiferencaEmDias(dataFinal: Date) {
+    
     let atual = new Date().getTime()
 
-    let seila = atual - final
+    let seila = atual - dataFinal.getTime()
     let tempoEmDias = 1000 * 60 * 60 * 24
     let dias = seila / tempoEmDias
-    this.qntDias = dias
-    console.log(dias);
-    console.log(seila);
-
-    
+    let diasPositivo = Math.abs(dias)
+    this.qntDias = diasPositivo
+    if(dias >0){
+      this.vencindo = true
+    }else{
+      this.vencindo = false
+    } 
  }
 }

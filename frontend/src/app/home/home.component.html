@@ -11,10 +11,10 @@
   <div *ngIf="apolice && !null">
     <h1>Apolice selecionada</h1>
     <p> Termino contrato - {{apolice.fimContrato | date:'dd/MM/yyyy'}} </p>
-    <p>Status de vencimento: {{status == true ? Vencida : Ativa}}</p>
-    <p> Faltam {{qntDias}}x dias para vencer</p>
-    <p> Vencida à  x dias</p>
-    <p> Placa Veículo - {{apolice.placaVeiculo }} </p>
+    <p>Status de contrato: {{status? Vencido : Ativo}}</p>
+    <p *ngIf="!vencindo"> Faltam {{qntDias | number: '1.0-0'}} dias para vencer</p>
+    <p *ngIf="vencindo"> Vencida à  {{qntDias | number: '1.0-0'}} dias</p>
+    <p> Placa Veículo - {{apolice.placaVeiculo | uppercase}} </p>
     <p> Valor da Apólice - {{apolice.valorApolice | currency: 'BRL':true}} </p>
   </div>
 </div>

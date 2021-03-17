@@ -13,7 +13,7 @@
     </ng-container>
     <ng-container matColumnDef="placa">
       <th mat-header-cell *matHeaderCellDef> Placa Veículo </th>
-      <td mat-cell *matCellDef="let apolice"> {{apolice.placaVeiculo}} </td>
+      <td mat-cell *matCellDef="let apolice"> {{apolice.placaVeiculo | uppercase}} </td>
     </ng-container>
     <ng-container matColumnDef="valorApolice">
       <th mat-header-cell *matHeaderCellDef> Valor da Apólice </th>
