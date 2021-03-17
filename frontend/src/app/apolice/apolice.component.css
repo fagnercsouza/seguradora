@@ -6,3 +6,7 @@ form{
     margin: 15px auto;
 
 }
+.table-container{
+    height: 65vh;
+    overflow: auto;
+}

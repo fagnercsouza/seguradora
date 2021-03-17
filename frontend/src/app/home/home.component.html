@@ -9,7 +9,7 @@
   </mat-form-field>
 
   <div *ngIf="apolice && !null">
-    <h1>Apolice selecionada {{apolice.numeroApolice}}</h1>
+    <h3>Apolice selecionada {{apolice.numeroApolice}}</h3>
     <p> Termino contrato: {{apolice.fimContrato | date:'dd/MM/yyyy'}} </p>
     <p>Status de contrato:
        <strong *ngIf="vencindo" style="color: red;">Vencido</strong> 

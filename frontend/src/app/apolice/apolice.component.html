@@ -1,4 +1,5 @@
-<table mat-table [dataSource]="apolices" class="mat-elevation-z8">
+<div class="table-container">
+  <table mat-table [dataSource]="apolices" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> Número Apolice </th>
       <td mat-cell *matCellDef="let apolice"> {{apolice.numeroApolice}} </td>
@@ -22,3 +23,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>

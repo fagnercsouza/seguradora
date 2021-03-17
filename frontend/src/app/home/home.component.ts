@@ -44,5 +44,6 @@ export class HomeComponent implements OnInit {
     }else{
       this.vencindo = false
     } 
+    this.value = 0
  }
 }
