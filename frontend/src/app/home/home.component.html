@@ -1,0 +1,18 @@
+<div class="conteudo">
+
+<mat-form-field class="example-form-field">
+    <mat-label>Informe Número da Apólice</mat-label>
+    <input matInput type="text" [(ngModel)]="value">
+    <button mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="buscarApolice()">
+        Buscar
+    </button>
+  </mat-form-field>
+
+  <div *ngIf="apolice && !null">
+    <h1>Apolice selecionada</h1>
+    <p> Início contrato - {{apolice.inicioContrato | date:'dd/MM/yyyy'}} </p>
+    <p> Termino contrato - {{apolice.fimContrato | date:'dd/MM/yyyy'}} </p>
+    <p> Placa Veículo - {{apolice.placaVeiculo }} </p>
+    <p> Valor da Apólice - {{apolice.valorApolice | currency: 'BRL':true}} </p>
+  </div>
+</div>

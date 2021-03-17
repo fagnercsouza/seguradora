@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="apolices" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Número Apolice </th>
+      <td mat-cell *matCellDef="let apolice"> {{apolice.numeroApolice}} </td>
+    </ng-container>
+    <ng-container matColumnDef="inicioContrato">
+      <th mat-header-cell *matHeaderCellDef> Início do Contrato </th>
+      <td mat-cell *matCellDef="let apolice"> {{apolice.inicioContrato | date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fimContrato">
+      <th mat-header-cell *matHeaderCellDef> Fim do Contrtato </th>
+      <td mat-cell *matCellDef="let apolice"> {{apolice.fimContrato | date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="placa">
+      <th mat-header-cell *matHeaderCellDef> Placa Veículo </th>
+      <td mat-cell *matCellDef="let apolice"> {{apolice.placaVeiculo}} </td>
+    </ng-container>
+    <ng-container matColumnDef="valorApolice">
+      <th mat-header-cell *matHeaderCellDef> Valor da Apólice </th>
+      <td mat-cell *matCellDef="let apolice"> {{apolice.valorApolice | currency: 'BRL': true }} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
