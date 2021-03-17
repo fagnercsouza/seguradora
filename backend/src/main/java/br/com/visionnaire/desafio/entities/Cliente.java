@@ -22,7 +22,7 @@ public class Cliente implements Serializable {
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false, unique = true)
-//    @CPF
+    @CPF
     private String cpf;
     @Column(nullable = false)
     private String cidade;
