@@ -46,6 +46,7 @@ npm install
 # executar o projeto
 npm start
 ```
+http://localhost:4200/
 
 # Autor
 
