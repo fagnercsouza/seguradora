@@ -9,15 +9,18 @@
   </mat-form-field>
 
   <div *ngIf="apolice && !null">
-    <h3>Apolice selecionada {{apolice.numeroApolice}}</h3>
-    <p> Termino contrato: {{apolice.fimContrato | date:'dd/MM/yyyy'}} </p>
-    <p>Status de contrato:
-       <strong *ngIf="vencindo" style="color: red;">Vencido</strong> 
-       <strong *ngIf="!vencindo" style="color: green;">Ativo</strong>
-    </p>
-    <p *ngIf="!vencindo"> Faltam {{qntDias | number: '1.0-0'}} dias para vencer</p>
-    <p *ngIf="vencindo"> Vencida à  {{qntDias | number: '1.0-0'}} dias</p>
-    <p> Placa Veículo: {{apolice.placaVeiculo | uppercase}} </p>
-    <p> Valor da Apólice: {{apolice.valorApolice | currency: 'BRL':true}} </p>
+    <mat-list role="list">
+      <mat-list-item role="listitem">Apolice número {{apolice.numeroApolice}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Termino contrato: {{apolice.fimContrato | date:'dd/MM/yyyy'}} </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Status de contrato:
+        <strong *ngIf="vencindo" style="color: red;"> Vencido</strong> 
+        <strong *ngIf="!vencindo" style="color: green;"> Ativo</strong></mat-list-item><mat-divider></mat-divider>
+      <mat-list-item *ngIf="!vencindo" role="listitem">Faltam {{qntDias | number: '1.0-0'}} dias para vencer</mat-list-item><mat-divider></mat-divider>
+      <mat-list-item *ngIf="vencindo" role="listitem"> Vencida à  {{qntDias | number: '1.0-0'}} dias</mat-list-item><mat-divider></mat-divider>
+      <mat-list-item role="listitem">Placa Veículo: {{apolice.placaVeiculo | uppercase}}</mat-list-item><mat-divider></mat-divider>
+      <mat-list-item role="listitem">Valor da Apólice: {{apolice.valorApolice | currency: 'BRL':true}} </mat-list-item>
+    </mat-list>
   </div>
 </div>

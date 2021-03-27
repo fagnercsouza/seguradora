@@ -7,7 +7,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
+import {MatListModule} from '@angular/material/list';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApoliceComponent } from './apolice/apolice.component';
@@ -32,6 +32,7 @@ import { HomeComponent } from './home/home.component';
     MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

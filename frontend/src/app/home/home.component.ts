@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
   buscarApolice(){
     if(!this.value){
-      return
+      return this.apolice = null
     }
     this.apoliceService.buscarApolice(this.value)
         .subscribe(res => {
